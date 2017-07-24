@@ -26,4 +26,10 @@ public class LengthTest {
     public void should_test_equality_between_yard_feet_and_inch() {
         assertThat(new Yard(1).equals(new Feet(3))).isTrue();
     }
+    
+    @Test
+    public void should_add_different_length() {
+        assertThat(new Inch(13).add(new Inch(11)).equals(new Feet(2))).isTrue();
+        assertThat(new Feet(3).add(new Yard(2)).equals(new Yard(3))).isTrue();
+    }
 }

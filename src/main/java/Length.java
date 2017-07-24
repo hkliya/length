@@ -14,4 +14,9 @@ public class Length {
     protected int toValueOfBaseUnit() {
         return 0;
     }
+
+    public Length add(Length anotherLength) {
+        return new Inch(this.toValueOfBaseUnit() + anotherLength.toValueOfBaseUnit());
+    }
+
 }
