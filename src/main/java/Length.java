@@ -8,10 +8,10 @@ public class Length {
     @Override
     public boolean equals(Object o) {
         Length length = (Length) o;
-        return toYardValue() == length.toYardValue();
+        return toValueOfBaseUnit() == length.toValueOfBaseUnit();
     }
 
-    protected int toYardValue() {
+    protected int toValueOfBaseUnit() {
         return 0;
     }
 }

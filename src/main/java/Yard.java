@@ -4,7 +4,7 @@ public class Yard extends Length {
     }
 
     @Override
-    protected int toYardValue() {
-        return this.value;
+    protected int toValueOfBaseUnit() {
+        return this.value * 3 * 12;
     }
 }

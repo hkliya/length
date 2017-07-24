@@ -21,4 +21,9 @@ public class LengthTest {
         assertThat(new Mile(1).equals(new Yard(1760))).isTrue();
         assertThat(new Mile(1).equals(new Yard(1761))).isFalse();
     }
+    
+    @Test
+    public void should_test_equality_between_yard_feet_and_inch() {
+        assertThat(new Yard(1).equals(new Feet(3))).isTrue();
+    }
 }

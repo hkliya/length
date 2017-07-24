@@ -5,8 +5,8 @@ public class Mile extends Length {
     }
 
     @Override
-    protected int toYardValue() {
-        return value * 1760;
+    protected int toValueOfBaseUnit() {
+        return value * 1760 * 12 * 3;
     }
 
     @Override
