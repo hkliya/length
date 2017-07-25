@@ -13,7 +13,7 @@ public class Quantity {
         return toMinimumUnitValue() == anotherQuantity.toMinimumUnitValue();
     }
 
-    private int toMinimumUnitValue() {
+    protected int toMinimumUnitValue() {
         return this.value * unit.conversionRate();
     }
 

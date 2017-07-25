@@ -29,4 +29,12 @@ public class LengthTest {
         assertThat(new Length(13, Unit.INCH).plus(new Length(11, Unit.INCH)).equals(new Length(2, Unit.FEET)));
         assertThat(new Length(3, Unit.FEET).plus(new Length(2, Unit.YARD)).equals(new Length(3, Unit.YARD)));
     }
+    
+    @Test
+    public void should_print_length() {
+        assertThat(new Length(14, Unit.INCH).toString()).isEqualTo("1 FEET 2 INCH");
+        assertThat(new Length(24, Unit.INCH).toString()).isEqualTo("2 FEET");
+        assertThat(new Length(39, Unit.INCH).toString()).isEqualTo("1 YARD 3 INCH");
+        assertThat(new Length(1762, Unit.YARD).toString()).isEqualTo("1 MILE 2 YARD");
+    }
 }
