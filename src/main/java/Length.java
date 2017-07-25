@@ -5,6 +5,8 @@ import static java.util.stream.Collectors.joining;
 
 public class Length extends Quantity {
 
+    public static final String DELIMETER = " ";
+
     public Length(int value) {
         super(value);
     }
@@ -42,6 +44,10 @@ public class Length extends Quantity {
             list.add(Inch.NAME);
         }
 
-        return list.stream().collect(joining(" "));
+        return list.stream().collect(joining(DELIMETER));
+    }
+
+    public String toInchString() {
+        return toValueOfBaseUnit() + DELIMETER + Inch.NAME;
     }
 }

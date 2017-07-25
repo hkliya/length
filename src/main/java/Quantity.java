@@ -20,4 +20,5 @@ public abstract class Quantity {
     protected int getSumOfBaseUnitValue(Quantity anotherQuantity) {
         return this.toValueOfBaseUnit() + anotherQuantity.toValueOfBaseUnit();
     }
+
 }
