@@ -40,7 +40,7 @@ public class LengthTest {
     
     @Test
     public void should_print_length_in_inch() {
-        assertThat(new Length(2, Unit.FEET).toStringInInch()).isEqualTo("24 INCH");
-        assertThat(new Length(2, Unit.YARD).toStringInInch()).isEqualTo("72 INCH");
+        assertThat(new Length(2, Unit.FEET).toStringInMinimumUnit()).isEqualTo("24 INCH");
+        assertThat(new Length(2, Unit.YARD).toStringInMinimumUnit()).isEqualTo("72 INCH");
     }
 }

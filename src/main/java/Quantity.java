@@ -1,4 +1,5 @@
 public class Quantity {
+    public static final String DELIMITER = " ";
     protected final int value;
     protected final Unit unit;
 
@@ -23,5 +24,9 @@ public class Quantity {
 
     protected Unit getMinimumUnit() {
         return null;
+    }
+
+    public String toStringInMinimumUnit() {
+        return toMinimumUnitValue() + DELIMITER + getMinimumUnit().name();
     }
 }

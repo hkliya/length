@@ -3,8 +3,6 @@ import java.util.stream.Collectors;
 
 public class Length extends Quantity {
 
-    public static final String DELIMITER = " ";
-
     public Length(int value, Unit unit) {
         super(value, unit);
     }
@@ -46,7 +44,4 @@ public class Length extends Quantity {
         return list.stream().collect(Collectors.joining(DELIMITER));
     }
 
-    public String toStringInInch() {
-        return toMinimumUnitValue() + DELIMITER + Unit.INCH.name();
-    }
 }
