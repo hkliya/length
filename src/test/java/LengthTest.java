@@ -24,4 +24,9 @@ public class LengthTest {
         assertThat(new Length(1, Unit.FEET).equals(new Length(12, Unit.INCH))).isTrue();
     }
     
+    @Test
+    public void should_add_length() {
+        assertThat(new Length(13, Unit.INCH).plus(new Length(11, Unit.INCH)).equals(new Length(2, Unit.FEET)));
+        assertThat(new Length(3, Unit.FEET).plus(new Length(2, Unit.YARD)).equals(new Length(3, Unit.YARD)));
+    }
 }

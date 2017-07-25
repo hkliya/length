@@ -1,4 +1,4 @@
-public enum  Unit {
+public enum Unit {
     INCH(1),
     FEET(12 * INCH.conversionRate),
     YARD(3 * FEET.conversionRate),

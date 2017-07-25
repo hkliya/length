@@ -1,3 +1,5 @@
+import com.sun.org.apache.bcel.internal.generic.InstructionComparator;
+
 public class Length {
     private final int value;
     private final Unit unit;
@@ -15,5 +17,9 @@ public class Length {
 
     private int toMinimumUnitValue() {
         return this.value * unit.conversionRate();
+    }
+
+    public Length plus(Length length) {
+        return new Length(this.toMinimumUnitValue() + length.toMinimumUnitValue(), Unit.INCH);
     }
 }
