@@ -14,6 +14,13 @@ public class Length {
     @Override
     public boolean equals(Object obj) {
         Length anotherLength = (Length) obj;
-        return this.value == anotherLength.value && this.unit.equals(anotherLength.unit);
+        if (this.unit.equals(anotherLength.unit)) {
+            return this.value == anotherLength.value;
+        }
+        return toYardValue() == anotherLength.value;
+    }
+
+    private int toYardValue() {
+        return this.value * 1760;
     }
 }
