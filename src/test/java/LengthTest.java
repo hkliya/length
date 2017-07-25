@@ -37,4 +37,10 @@ public class LengthTest {
         assertThat(new Length(39, Unit.INCH).toString()).isEqualTo("1 YARD 3 INCH");
         assertThat(new Length(1762, Unit.YARD).toString()).isEqualTo("1 MILE 2 YARD");
     }
+    
+    @Test
+    public void should_print_length_in_inch() {
+        assertThat(new Length(2, Unit.FEET).toStringInInch()).isEqualTo("24 INCH");
+        assertThat(new Length(2, Unit.YARD).toStringInInch()).isEqualTo("72 INCH");
+    }
 }
