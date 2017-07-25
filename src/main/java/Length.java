@@ -1,25 +1,10 @@
-import com.sun.org.apache.bcel.internal.generic.InstructionComparator;
-
-public class Length {
-    private final int value;
-    private final Unit unit;
-
+public class Length extends Quantity {
     public Length(int value, Unit unit) {
-        this.value = value;
-        this.unit = unit;
+        super(value, unit);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        Length anotherLength = (Length) obj;
-        return toMinimumUnitValue() == anotherLength.toMinimumUnitValue();
-    }
-
-    private int toMinimumUnitValue() {
-        return this.value * unit.conversionRate();
-    }
-
-    public Length plus(Length length) {
-        return new Length(this.toMinimumUnitValue() + length.toMinimumUnitValue(), Unit.INCH);
+    protected Unit getMinimumUnit() {
+        return Unit.INCH;
     }
 }
