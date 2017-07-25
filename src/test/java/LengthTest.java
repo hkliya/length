@@ -32,4 +32,12 @@ public class LengthTest {
         assertThat(new Inch(13).add(new Inch(11)).equals(new Feet(2))).isTrue();
         assertThat(new Feet(3).add(new Yard(2)).equals(new Yard(3))).isTrue();
     }
+
+    @Test
+    public void should_print() {
+        assertThat(new Inch(14).toString()).isEqualTo("1 FEET 2 INCH");
+        assertThat(new Inch(24).toString()).isEqualTo("2 FEET");
+        assertThat(new Inch(39).toString()).isEqualTo("1 YARD 3 INCH");
+        assertThat(new Yard(1762).toString()).isEqualTo("1 MILE 2 YARD");
+    }
 }
