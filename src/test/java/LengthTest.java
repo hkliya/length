@@ -20,5 +20,8 @@ public class LengthTest {
     public void should_test_equality_with_different_units() {
         assertThat(new Length(1, Unit.MILE).equals(new Length(1760, Unit.YARD))).isTrue();
         assertThat(new Length(1, Unit.MILE).equals(new Length(1761, Unit.YARD))).isFalse();
+        assertThat(new Length(1, Unit.YARD).equals(new Length(3, Unit.FEET))).isTrue();
+        assertThat(new Length(1, Unit.FEET).equals(new Length(12, Unit.INCH))).isTrue();
     }
+    
 }

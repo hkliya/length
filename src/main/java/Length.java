@@ -1,7 +1,3 @@
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Map;
-
 public class Length {
     private final int value;
     private final Unit unit;
@@ -17,10 +13,22 @@ public class Length {
         if (this.unit.equals(anotherLength.unit)) {
             return this.value == anotherLength.value;
         }
-        return toYardValue() == anotherLength.value;
+        return toMinimumUnitValue() == anotherLength.toMinimumUnitValue();
     }
 
-    private int toYardValue() {
-        return this.value * 1760;
+    private int toMinimumUnitValue() {
+        if (this.unit.equals(Unit.MILE)) {
+            return this.value * 1760 * 3 * 12;
+        }
+
+        if (this.unit.equals(Unit.YARD)) {
+            return this.value * 3 * 12;
+        }
+
+        if (this.unit.equals(Unit.FEET)) {
+            return this.value * 12;
+        }
+
+        return this.value;
     }
 }
